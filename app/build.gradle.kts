@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.firebase.database)
     implementation("com.tbuonomo:dotsindicator:5.0")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation ("com.google.code.gson:gson:2.8.8")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

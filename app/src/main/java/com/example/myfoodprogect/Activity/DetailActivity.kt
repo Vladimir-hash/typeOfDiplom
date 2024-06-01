@@ -7,9 +7,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
+import com.example.myfoodprogect.Adapter.PicListAdapter
+import com.example.myfoodprogect.Adapter.SizeListAdapter
 import com.example.myfoodprogect.Model.ItemsModel
 import com.example.myfoodprogect.R
 import com.example.myfoodprogect.databinding.ActivityDetailBinding
@@ -32,8 +35,33 @@ class DetailActivity : BasicActivity() {
         managmentCart = ManagmentCart(this)
 
         getBundle()
+        initList()
 
     }
+
+    private fun initList() {
+        val sizeList = ArrayList<String>()
+        for (size in item.size){
+            sizeList.add(size.toString())
+        }
+
+        binding.sizeList.adapter = SizeListAdapter(sizeList)
+        binding.sizeList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        val colorList = ArrayList<String>()
+        for (imageUrl in item.picUrl) {
+            colorList.add(imageUrl)
+        }
+
+        Glide.with(this)
+            .load(colorList[0])
+            .into(binding.picMain)
+
+        binding.picList.adapter = PicListAdapter(colorList, binding.picMain)
+        binding.picList.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+    }
+
     private fun getBundle() {
         item= intent.getParcelableExtra("object")!!
         binding.titleText.text = item.title

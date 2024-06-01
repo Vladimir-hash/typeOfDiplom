@@ -1,5 +1,5 @@
 package com.example.myfoodprogect.Helper
 
-class ChangeItemNumbersListener {
+interface ChangeNumberItemsListener {
     fun onChanged()
 }
