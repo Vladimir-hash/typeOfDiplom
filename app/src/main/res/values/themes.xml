@@ -7,6 +7,9 @@
 
     <style name="Theme.MyFoodProgect" parent="Base.Theme.MyFoodProgect">
     <item name="android:windowTranslucentNavigation">true</item>
-
+    </style>
+    <style name="CircleImageView">
+        <item name = "cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 </resources>

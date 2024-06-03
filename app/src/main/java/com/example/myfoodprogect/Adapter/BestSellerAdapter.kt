@@ -25,7 +25,7 @@ class BestSellerAdapter(val items: MutableList<ItemsModel>): RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: BestSellerAdapter.Viewholder, position: Int ){
-        holder.binding.titleText.text = items[position].title
+        holder.binding.TitleText.text = items[position].title
         holder.binding.priceText.text = "$" + items[position].price.toString()
         holder.binding.ratingText.text = items[position].rating.toString()
 

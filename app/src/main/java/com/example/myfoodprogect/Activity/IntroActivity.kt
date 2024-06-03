@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.myfoodprogect.databinding.ActivityIntroBinding
 
 class IntroActivity : BasicActivity() {
-    private lateinit var binding:ActivityIntroBinding
+    private lateinit var binding: ActivityIntroBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
