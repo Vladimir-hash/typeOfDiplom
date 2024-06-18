@@ -1,10 +1,8 @@
 package com.example.myfoodprogect.ViewModel
 
-import android.content.ClipData.Item
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.myfoodprogect.Adapter.CategoryAdapter
 import com.example.myfoodprogect.Model.CategoryModel
 import com.example.myfoodprogect.Model.ItemsModel
 import com.example.myfoodprogect.Model.SliderModel
@@ -26,8 +24,8 @@ class MainViewModel:ViewModel() {
     val bestSeller:LiveData<MutableList<ItemsModel>> = _bestSeller
 
     fun loadBanners() {
-        val Ref=firebaseDatabase.getReference("Banner")
-        Ref.addValueEventListener(object: ValueEventListener{
+        val myRef=firebaseDatabase.getReference("Banner")
+        myRef.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val lists = mutableListOf<SliderModel>()
                 for (childSnapshot in snapshot.children) {
@@ -46,8 +44,8 @@ class MainViewModel:ViewModel() {
     }
 
     fun loadCategory(){
-        val Ref=firebaseDatabase.getReference("Category")
-        Ref.addValueEventListener(object : ValueEventListener{
+        val myRef=firebaseDatabase.getReference("Category")
+        myRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val lists = mutableListOf<CategoryModel>()
                 for (childSnapshot in snapshot.children) {
@@ -63,8 +61,8 @@ class MainViewModel:ViewModel() {
         })
     }
     fun  loadBestSeller() {
-        val Ref= firebaseDatabase.getReference("Items")
-        Ref.addValueEventListener(object : ValueEventListener {
+        val myRef= firebaseDatabase.getReference("Items")
+        myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val lists = mutableListOf<ItemsModel>()
 

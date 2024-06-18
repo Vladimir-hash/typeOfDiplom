@@ -26,8 +26,7 @@ data class ItemsModel(
         parcel.readString().toString(),
         parcel.readInt(),
         parcel.readString().toString()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(title)

@@ -47,6 +47,15 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    //Lifecycle
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.1")
+
+    //ViewModel
+    implementation("androidx.activity:activity-ktx:1.9.0")
     implementation(libs.firebase.database)
     implementation("com.tbuonomo:dotsindicator:5.0")
     implementation ("com.github.bumptech.glide:glide:4.16.0")

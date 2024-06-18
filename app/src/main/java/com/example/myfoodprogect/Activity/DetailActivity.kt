@@ -17,7 +17,7 @@ class DetailActivity : BasicActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var item:ItemsModel
     private var numberOrder = 1
-    private lateinit var managmentCart: ManagmentCart
+    private lateinit var managementCart: ManagmentCart
 
 
 
@@ -26,7 +26,7 @@ class DetailActivity : BasicActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        managmentCart = ManagmentCart(this)
+        managementCart = ManagmentCart(this)
 
         getBundle()
         initList()
@@ -66,7 +66,7 @@ class DetailActivity : BasicActivity() {
 
         binding.addToCartButton.setOnClickListener{
             item.numberInCart = numberOrder
-            managmentCart.insertItems(item)
+            managementCart.insertItems(item)
         }
 
         binding.backButton.setOnClickListener{ finish()}
