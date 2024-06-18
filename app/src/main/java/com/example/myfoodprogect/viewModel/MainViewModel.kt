@@ -1,11 +1,11 @@
-package com.example.myfoodprogect.ViewModel
+package com.example.myfoodprogect.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.myfoodprogect.Model.CategoryModel
-import com.example.myfoodprogect.Model.ItemsModel
-import com.example.myfoodprogect.Model.SliderModel
+import com.example.myfoodprogect.model.CategoryModel
+import com.example.myfoodprogect.model.ItemsModel
+import com.example.myfoodprogect.model.SliderModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

@@ -1,4 +1,4 @@
-package com.example.myfoodprogect.Adapter
+package com.example.myfoodprogect.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,27 +7,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
-import com.example.myfoodprogect.Helper.ChangeNumberItemsListener
-import com.example.myfoodprogect.Model.ItemsModel
+import com.example.myfoodprogect.helper.ChangeNumberItemsListener
+import com.example.myfoodprogect.model.ItemsModel
 import com.example.myfoodprogect.databinding.ViewholderCartBinding
-import com.example.project1762.Helper.ManagmentCart
+import com.example.myfoodprogect.helper.ManagementCart
 
 class CartAdapter(
     private val listItemSelected: ArrayList<ItemsModel>,
     context: Context,
     var changeNumberItemsListener: ChangeNumberItemsListener? = null
 ): RecyclerView.Adapter<CartAdapter.ViewHolder>() {
-    class ViewHolder(val binding: ViewholderCartBinding):RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(val binding: ViewholderCartBinding):RecyclerView.ViewHolder(binding.root)
 
-    }
+    private val managementCart = ManagementCart(context)
 
-    private val managementCart = ManagmentCart(context)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
        val binding = ViewholderCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
-    override fun onBindViewHolder(holder: CartAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = listItemSelected[position]
         holder.binding.TitleText.text = item.title
         holder.binding.feeEachItem.text = "$${item.price}"

@@ -1,4 +1,4 @@
-package com.example.myfoodprogect.Activity
+package com.example.myfoodprogect.activity
 
 import android.os.Bundle
 import android.view.WindowManager

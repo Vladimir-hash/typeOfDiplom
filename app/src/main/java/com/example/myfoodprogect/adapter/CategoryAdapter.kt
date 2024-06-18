@@ -1,28 +1,28 @@
-package com.example.myfoodprogect.Adapter
+package com.example.myfoodprogect.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.myfoodprogect.Model.CategoryModel
+import com.example.myfoodprogect.model.CategoryModel
 import com.example.myfoodprogect.databinding.ViewholdercategoryBinding
 
-class CategoryAdapter(val items: MutableList<CategoryModel>): RecyclerView.Adapter<CategoryAdapter.Viewholder>() {
+class CategoryAdapter(val items: MutableList<CategoryModel>): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
     private lateinit var context: Context
 
-    class Viewholder(val binding: ViewholdercategoryBinding):
+    class ViewHolder(val binding: ViewholdercategoryBinding):
     RecyclerView.ViewHolder(binding.root){
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryAdapter.Viewholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
         val binding = ViewholdercategoryBinding.inflate(LayoutInflater.from(context), parent, false)
-        return Viewholder(binding)
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: CategoryAdapter.Viewholder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.binding.titleCat.text = item.title
         Glide.with(holder.itemView.context)

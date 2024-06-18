@@ -1,3 +1,3 @@
-package com.example.myfoodprogect.Model
+package com.example.myfoodprogect.model
 
 data class SliderModel(val url:String="")

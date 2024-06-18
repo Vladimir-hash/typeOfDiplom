@@ -1,41 +1,36 @@
-package com.example.myfoodprogect.Adapter
+package com.example.myfoodprogect.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.myfoodprogect.R
-import com.example.myfoodprogect.databinding.ViewholderPicListBinding
 import com.example.myfoodprogect.databinding.ViewholderSizeBinding
 
 class SizeListAdapter(val items:MutableList<String>):
-    RecyclerView.Adapter<SizeListAdapter.Viewholder>(){
+    RecyclerView.Adapter<SizeListAdapter.ViewHolder>(){
         private var selectedPosition = -1
-        private  var lastSeteledPosition = -1
+        private  var lastSettledPosition = -1
     private lateinit var context: Context
-    inner class Viewholder(val binding: ViewholderSizeBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ViewholderSizeBinding): RecyclerView.ViewHolder(binding.root)
 
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SizeListAdapter.Viewholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SizeListAdapter.ViewHolder {
         context = parent.context
         val binding = ViewholderSizeBinding.inflate(LayoutInflater.from(context), parent, false)
-        return Viewholder(binding)
+        return ViewHolder(binding)
     }
 
 
 
-    override fun onBindViewHolder(holder: SizeListAdapter.Viewholder, position: Int) {
+    override fun onBindViewHolder(holder: SizeListAdapter.ViewHolder, position: Int) {
 
             holder.binding.sizeText.text = items[position]
 
 
             holder.binding.root.setOnClickListener{
-                lastSeteledPosition = selectedPosition
-                selectedPosition = position
-                notifyItemChanged(lastSeteledPosition)
+                lastSettledPosition = selectedPosition
+                selectedPosition = holder.adapterPosition
+                notifyItemChanged(lastSettledPosition)
                 notifyItemChanged(selectedPosition)
 
 

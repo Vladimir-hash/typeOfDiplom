@@ -1,4 +1,4 @@
-package com.example.myfoodprogect.Activity
+package com.example.myfoodprogect.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
-import com.example.myfoodprogect.Adapter.BestSellerAdapter
-import com.example.myfoodprogect.Adapter.CategoryAdapter
-import com.example.myfoodprogect.Adapter.SliderAdapter
-import com.example.myfoodprogect.Model.SliderModel
-import com.example.myfoodprogect.ViewModel.MainViewModel
+import com.example.myfoodprogect.adapter.BestSellerAdapter
+import com.example.myfoodprogect.adapter.CategoryAdapter
+import com.example.myfoodprogect.adapter.SliderAdapter
+import com.example.myfoodprogect.model.SliderModel
+import com.example.myfoodprogect.viewModel.MainViewModel
 import com.example.myfoodprogect.databinding.ActivityMainBinding
 
 

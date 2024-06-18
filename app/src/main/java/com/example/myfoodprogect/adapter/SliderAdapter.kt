@@ -1,4 +1,4 @@
-package com.example.myfoodprogect.Adapter
+package com.example.myfoodprogect.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.request.RequestOptions
-import com.example.myfoodprogect.Model.SliderModel
+import com.example.myfoodprogect.model.SliderModel
 import com.example.myfoodprogect.R
 
 class SliderAdapter(

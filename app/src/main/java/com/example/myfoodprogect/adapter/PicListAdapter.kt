@@ -1,4 +1,4 @@
-package com.example.myfoodprogect.Adapter
+package com.example.myfoodprogect.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,32 +10,30 @@ import com.example.myfoodprogect.R
 import com.example.myfoodprogect.databinding.ViewholderPicListBinding
 
 class PicListAdapter(val items:MutableList<String>, var picMain: ImageView):
-    RecyclerView.Adapter<PicListAdapter.Viewholder>(){
+    RecyclerView.Adapter<PicListAdapter.ViewHolder>(){
         private var selectedPosition = -1
-        private  var lastSeteledPosition = -1
+        private  var lastSettledPosition = -1
     private lateinit var context: Context
-    inner class Viewholder(val binding: ViewholderPicListBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ViewholderPicListBinding): RecyclerView.ViewHolder(binding.root)
 
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PicListAdapter.Viewholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PicListAdapter.ViewHolder {
         context = parent.context
         val binding = ViewholderPicListBinding.inflate(LayoutInflater.from(context), parent, false)
-        return Viewholder(binding)
+        return ViewHolder(binding)
     }
 
 
 
-    override fun onBindViewHolder(holder: PicListAdapter.Viewholder, position: Int) {
+    override fun onBindViewHolder(holder: PicListAdapter.ViewHolder, position: Int) {
 
        Glide.with(holder.itemView.context)
            .load(items[position])
            .into(holder.binding.picList)
 
             holder.binding.root.setOnClickListener{
-                lastSeteledPosition = selectedPosition
-                selectedPosition = position
-                notifyItemChanged(lastSeteledPosition)
+                lastSettledPosition = selectedPosition
+                selectedPosition = holder.adapterPosition
+                notifyItemChanged(lastSettledPosition)
                 notifyItemChanged(selectedPosition)
 
                 Glide.with(holder.itemView.context)

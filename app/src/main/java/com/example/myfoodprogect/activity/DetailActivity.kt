@@ -1,4 +1,4 @@
-package com.example.myfoodprogect.Activity
+package com.example.myfoodprogect.activity
 
 import android.content.Intent
 import android.net.Uri
@@ -7,17 +7,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
-import com.example.myfoodprogect.Adapter.PicListAdapter
-import com.example.myfoodprogect.Adapter.SizeListAdapter
-import com.example.myfoodprogect.Model.ItemsModel
+import com.example.myfoodprogect.adapter.PicListAdapter
+import com.example.myfoodprogect.adapter.SizeListAdapter
 import com.example.myfoodprogect.databinding.ActivityDetailBinding
-import com.example.project1762.Helper.ManagmentCart
+import com.example.myfoodprogect.model.ItemsModel
+import com.example.myfoodprogect.helper.ManagementCart
 
 class DetailActivity : BasicActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var item:ItemsModel
     private var numberOrder = 1
-    private lateinit var managementCart: ManagmentCart
+    private lateinit var managementCart: ManagementCart
 
 
 
@@ -26,7 +26,7 @@ class DetailActivity : BasicActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        managementCart = ManagmentCart(this)
+        managementCart = ManagementCart(this)
 
         getBundle()
         initList()

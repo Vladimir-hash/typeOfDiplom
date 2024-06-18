@@ -1,4 +1,4 @@
-package com.example.myfoodprogect.Helper
+package com.example.myfoodprogect.helper
 
 interface ChangeNumberItemsListener {
     fun onChanged()

@@ -1,4 +1,4 @@
-package com.example.myfoodprogect.Adapter
+package com.example.myfoodprogect.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -8,23 +8,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
-import com.example.myfoodprogect.Activity.DetailActivity
-import com.example.myfoodprogect.Model.ItemsModel
+import com.example.myfoodprogect.activity.DetailActivity
+import com.example.myfoodprogect.model.ItemsModel
 import com.example.myfoodprogect.databinding.ViewholderBestSellerBinding
 
-class BestSellerAdapter(val items: MutableList<ItemsModel>): RecyclerView.Adapter<BestSellerAdapter.Viewholder>() {
+class BestSellerAdapter(val items: MutableList<ItemsModel>): RecyclerView.Adapter<BestSellerAdapter.ViewHolder>() {
     private var context: Context? = null
-    class Viewholder (val binding: ViewholderBestSellerBinding): RecyclerView.ViewHolder(binding.root){
+    class ViewHolder (val binding: ViewholderBestSellerBinding): RecyclerView.ViewHolder(binding.root)
 
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):  BestSellerAdapter.Viewholder{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):  ViewHolder{
         context = parent.context
         val binding = ViewholderBestSellerBinding.inflate(LayoutInflater.from(context), parent, false)
-        return Viewholder(binding)
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: BestSellerAdapter.Viewholder, position: Int ){
+    override fun onBindViewHolder(holder: ViewHolder, position: Int ){
         holder.binding.TitleText.text = items[position].title
         holder.binding.priceText.text = "$" + items[position].price.toString()
         holder.binding.ratingText.text = items[position].rating.toString()
